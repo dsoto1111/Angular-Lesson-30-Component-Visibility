@@ -1,0 +1,21 @@
+<div #nav class="container">
+    <div class="innerContainer">
+        <div class="titleContainer">
+            <div class="title">Title</div>
+        </div>
+        <div class="navButton" [title]="'Button1'">Nav Button 1</div>
+        <div class="navButton">Nav Button 2</div>
+    </div>
+    <div class="dropdown">
+        <button class="dropButton" (click)="clickDropDownButton = !clickDropDownButton">Dropdown</button>
+        <div [appDropdown]="clickDropDownButton" class="dropdown-content">
+            <div class="dropdown-content-inner">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+            </div>
+        </div>
+    </div>
+</div>
+<pane [id]="'navbar pane 1: ' + height"></pane>
+<pane [id]="'navbar pane 2: ' + height"></pane>

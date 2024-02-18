@@ -1,0 +1,72 @@
+<app-navbar (navHeight)="offsetHeight = $event"></app-navbar>
+<div [appSetTopOffset]="offsetHeight" [style]="'margin: 1%;'">
+    <button appClick [child]="childComp" [textContent]="toggle.toString()" [ngStyle]="buttonStyle" (click)="toggle = !toggle"></button>
+    <app-child>
+        <ng-template appTempRef>
+            <h3 class="underline">Here Is A Header</h3>
+        </ng-template>
+        <pane [id]="'ContentChildren pane 1'"></pane>
+        <pane [id]="'ContentChildren pane 2'"></pane>
+        <pane [id]="'ContentChildren pane 3 ' + toggle.toString()"></pane>                
+    </app-child>
+    <ng-container #cRef></ng-container>
+    <p>This should show up after the h4</p>
+    <ng-template #tRef>
+        <h4>Subheading</h4>
+    </ng-template>
+    <pane [id]="'1'"></pane>
+    <pane [id]="'2'"></pane>
+    <pane *ngIf="toggle" [id]="'3'"></pane>
+    <p *appShowOrRemoveText="toggle">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+        incididunt ut labore et dolore
+        magna aliqua. Sit amet facilisis magna etiam tempor orci. Cras adipiscing enim eu turpis egestas. Faucibus
+        turpis in eu mi bibendum neque egestas. Quisque sagittis purus sit amet. Duis convallis convallis tellus id
+        interdum velit laoreet id. Nisl nunc mi ipsum faucibus vitae aliquet nec ullamcorper sit. Nulla porttitor massa
+        id neque aliquam vestibulum. Feugiat nibh sed pulvinar proin. Ac turpis egestas maecenas pharetra convallis
+        posuere. Id aliquet lectus proin nibh nisl condimentum id venenatis a. Tellus in metus vulputate eu scelerisque
+        felis imperdiet proin. Ut sem viverra aliquet eget sit amet tellus cras adipiscing. Tellus elementum sagittis
+        vitae et. Quam lacus suspendisse faucibus interdum posuere. Sed enim ut sem viverra. Donec adipiscing tristique
+        risus nec feugiat in. Nunc vel risus commodo viverra maecenas accumsan lacus. A scelerisque purus semper eget
+        duis at tellus at urna. Iaculis eu non diam phasellus vestibulum lorem.</p>
+
+    <ng-template [appShowOrRemoveText]="toggle">
+        <p> Pellentesque diam volutpat commodo sed egestas. Aliquam nulla facilisi cras fermentum odio. Enim ut sem
+            viverra
+            aliquet eget sit amet tellus. Duis at consectetur lorem donec. Tincidunt eget nullam non nisi est sit amet.
+            Sagittis purus sit amet volutpat consequat. Congue mauris rhoncus aenean vel elit scelerisque mauris
+            pellentesque. Volutpat consequat mauris nunc congue nisi vitae suscipit. Sed pulvinar proin gravida
+            hendrerit.
+            Facilisis leo vel fringilla est ullamcorper eget. Gravida cum sociis natoque penatibus et magnis dis.
+            Adipiscing
+            vitae proin sagittis nisl rhoncus mattis rhoncus urna neque. Vel pharetra vel turpis nunc eget lorem.
+            Faucibus
+            pulvinar elementum integer enim neque volutpat ac tincidunt vitae.</p>
+    </ng-template>
+
+    <p *appShowOrRemoveText="toggle"> Id volutpat lacus laoreet non curabitur gravida arcu ac tortor. Condimentum id
+        venenatis a condimentum vitae
+        sapien pellentesque habitant. Felis eget nunc lobortis mattis aliquam. Purus sit amet luctus venenatis lectus.
+        Quis enim lobortis scelerisque fermentum dui faucibus. At consectetur lorem donec massa sapien faucibus. Nullam
+        ac tortor vitae purus faucibus ornare suspendisse. Posuere ac ut consequat semper viverra nam libero justo. Ut
+        sem nulla pharetra diam sit amet nisl suscipit adipiscing. Posuere morbi leo urna molestie at elementum eu.</p>
+
+    <p *appShowOrRemoveText="toggle"> Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi tristique.
+        In hendrerit gravida rutrum
+        quisque non. Donec enim diam vulputate ut pharetra sit amet. Bibendum neque egestas congue quisque. Arcu non
+        odio euismod lacinia at quis risus. Nunc sed id semper risus in hendrerit gravida rutrum. Nibh ipsum consequat
+        nisl vel pretium lectus. Tristique risus nec feugiat in fermentum posuere urna nec. Dignissim diam quis enim
+        lobortis scelerisque fermentum. Duis ut diam quam nulla porttitor. Neque sodales ut etiam sit amet nisl. Odio eu
+        feugiat pretium nibh ipsum.</p>
+
+    <p *appShowOrRemoveText="toggle"> Laoreet non curabitur gravida arcu ac tortor dignissim. Iaculis nunc sed augue
+        lacus viverra vitae congue eu
+        consequat. Imperdiet proin fermentum leo vel. In nulla posuere sollicitudin aliquam ultrices sagittis orci a
+        scelerisque. Sit amet mattis vulputate enim. Pharetra et ultrices neque ornare aenean euismod elementum. Tortor
+        pretium viverra suspendisse potenti nullam ac tortor. Et tortor at risus viverra adipiscing at in tellus.
+        Facilisis magna etiam tempor orci eu lobortis. Volutpat odio facilisis mauris sit amet. Dui ut ornare lectus sit
+        amet est. A arcu cursus vitae congue mauris rhoncus aenean vel elit. Habitasse platea dictumst quisque sagittis
+        purus sit amet volutpat. In arcu cursus euismod quis viverra nibh cras. Tempor orci dapibus ultrices in iaculis
+        nunc sed augue. Sed vulputate odio ut enim blandit volutpat maecenas. Sem et tortor consequat id porta. Nisi
+        vitae suscipit tellus mauris a diam maecenas sed. Arcu dictum varius duis at consectetur lorem donec massa
+        sapien.</p>
+</div>
